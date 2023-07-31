@@ -1,0 +1,10 @@
+Create database Ordersss;
+use Ordersss;
+create table orders(ord_no int (20) auto_increment primary key ,purchase_amt int(20),customer_id int (20),salesman_id int (20));
+create table customer(customer_id int (20),cust_name varchar (20),city varchar (20),salesman_id int (20));
+insert into orders values(70001,500,800,1),(70002,10000,800,2);
+insert into orders (purchase_amt,customer_id,salesman_id)value(10000,800,3),(800,802,620),(900,803,4);
+select * from customer;
+insert into customer(customer_id,cust_name,city,salesman_id)value(802,'suresh','patna','9'),(803,'paresh','mumbai','11'),(500,'uresh','lucknow','12');
+select * from orders;
+select a.ord_no,a.purchase_amt,b.cust_name,b.city from orders a,customer b where a.customer_id=b.customer_id and a.purchase_amt Between 500 and 2000;
